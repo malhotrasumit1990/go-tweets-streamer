@@ -16,4 +16,10 @@
 <h3>Search tweets</h3>
         1. To Search for tweets: Uncomment line number 53 in main.go and rerun the application.
 
-        2. This will search tweets with  `Test` Keyword in it.    
+        2. This will search tweets with  `Test` Keyword in it.   
+        
+<h3> Unit Tests </h3>
+
+        I did not add unit tests here because It would just have been mocking the twitter client and testing mocked request and responses.
+
+        If I would have beed processing the response and then doing some thing with it. I would have added unit tests as well.
