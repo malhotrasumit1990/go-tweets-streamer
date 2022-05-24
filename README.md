@@ -10,8 +10,10 @@
 
 <h3>Post a tweet</h3>
         1. To Post a tweet: Uncomment line number 52 in main.go and rerun the application.
-        2. This will post "Test Tweet"
+
+        2. This will post `Test Tweet`
 
 <h3>Search tweets</h3>
         1. To Search for tweets: Uncomment line number 53 in main.go and rerun the application.
-        2. This will search tweets with  "Test" Keyword in it.    
+
+        2. This will search tweets with  `Test` Keyword in it.    
