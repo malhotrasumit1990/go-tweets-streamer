@@ -22,4 +22,4 @@
 
         I did not add unit tests here because It would just have been mocking the twitter client and testing mocked request and responses.
 
-        If I would have beed processing the response and then doing some thing with it. I would have added unit tests as well.
+        If It was like, processing the response and then doing some thing with it. I would have added unit tests as well.
