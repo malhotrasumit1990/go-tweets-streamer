@@ -9,6 +9,7 @@ import (
 	"github.com/go-tweets-streamer/model"
 )
 
+// This function return a twitter client built on top of HTTP client to make requests with Twitter API
 func Create_Streamer_Client(creds *model.Credentials) *twitter.Client {
 
 	config := oauth1.NewConfig(creds.ConsumerKey, creds.ConsumerSecret)
@@ -22,6 +23,7 @@ func Create_Streamer_Client(creds *model.Credentials) *twitter.Client {
 
 }
 
+// Get_Demux is to deMultiplex the message into a tweet or Direct message.
 func Get_Demux() twitter.SwitchDemux {
 
 	demux := twitter.NewSwitchDemux()
@@ -32,13 +34,11 @@ func Get_Demux() twitter.SwitchDemux {
 	demux.DM = func(dm *twitter.DirectMessage) {
 		fmt.Println(dm.SenderID)
 	}
-	demux.Event = func(event *twitter.Event) {
-		fmt.Printf("%#v\n", event)
-	}
 	return demux
 
 }
 
+// Start_Streamer will start Stream , look for  tweets where it finds a string "Dhoni"
 func Start_Streamer(twitter_client *twitter.Client) (*twitter.Stream, error) {
 
 	params := &twitter.StreamFilterParams{
@@ -49,7 +49,7 @@ func Start_Streamer(twitter_client *twitter.Client) (*twitter.Stream, error) {
 
 }
 
-//Func to post a tweet
+//Post_Tweet to post a tweet
 func Post_Tweet(twitter_client *twitter.Client, tweet_msg string) {
 
 	tweet, resp, err := twitter_client.Statuses.Update(tweet_msg, nil)
@@ -61,7 +61,7 @@ func Post_Tweet(twitter_client *twitter.Client, tweet_msg string) {
 
 }
 
-// Search for a Tweet
+// Search_Tweet will Search for a Tweet using a query string
 func Search_Tweet(twitter_client *twitter.Client, search_string string) {
 
 	search, resp, err := twitter_client.Search.Tweets(&twitter.SearchTweetParams{
